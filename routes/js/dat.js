@@ -1,0 +1,11 @@
+let now=Date.now()
+let dat=new Date(now*1000)
+let d =new Date()
+let n=d.getDate()
+let n2=dat.getDate()
+
+let m=d.getMonth()
+console.log(now)
+console.log(m+1)
+console.log(n)
+console.log(n2)

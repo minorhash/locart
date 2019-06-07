@@ -1,0 +1,29 @@
+﻿<div id="base" class="navbar-menu">
+	<div class="navbar-start"></div>
+	<div class="navbar-end">
+		<div class="navbar-item">
+		
+<% if(usr) {%>
+<a class="button is-black" href="/usr-my">
+<%= usr.name %>sama</a>
+<% }else{ %>
+<a class="button is-black" href="/usr-in">Log in&nbsp;
+<img src="img/login.png" alt="login/icon"></a>
+<a class="button is-small is-white" href="/usr-sign">新規会員登録</a>&nbsp;&nbsp;
+<% } %>
+			<a class="button is-black" href="/cart">Cart&nbsp;
+			<img src="img/cart.png" alt="cart/icon"></a>
+			<a class="button is-black" href="/usr-fav">Favorite&nbsp;
+			<img src="img/heart.png" alt="heart/icon"></a>
+			<a class="button is-black" href="/usr-his">history&nbsp;
+			<img src="img/history.png" alt="history/icon"></a>
+<a class="button is-black" href="/usr-sea">Search&nbsp;
+<img src="img/search.png" alt="search/icon"></a>
+			<a class="button is-black" href="/usr-inf">Info&nbsp;
+			<img src="img/info.png" alt="info/icon"></a>
+
+		</div><!--navitem -->
+	</div><!--/navend-->
+</div><!--/navmenu -->
+
+

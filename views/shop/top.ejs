@@ -1,0 +1,99 @@
+<% if(mer){ %>
+<% var len=mer.length %>
+<% var row= Math.ceil(len/3) %>
+
+<% if(row==1){ %>
+
+<nav class="columns">
+<% for(var i=0;i<3;i++) { %>
+<div class="column ">
+    <form action="/item<%= mer[i].sku %>">
+        <input type="hidden" name="sku" value="<%= mer[i].sku %>" >
+<input type="image" src="img/cd/png/<%= mer[i].sku %>.png">
+</form>
+
+</div>
+<% } %><!-- for-->
+</nav>
+
+<% } else if(row==2) { %>
+<nav class="columns">
+<% for(var i=0;i<3;i++) { %>
+<div class="column ">
+    <form action="/item<%= mer[i].sku %>">
+        <input type="hidden" name="sku" value="<%= mer[i].sku %>" >
+<input type="image" src="img/cd/png/<%= mer[i].sku %>.png">
+</form>
+
+</div>
+<% } %>
+</nav>
+
+<nav class="columns">
+<% for(var i=3;i<6;i++) { %>
+<div class="column ">
+    <form action="/item<%= mer[i].sku %>">
+        <input type="hidden" name="sku" value="<%= mer[i].sku %>" >
+<input type="image" src="img/cd/png/<%= mer[i].sku %>.png">
+</form>
+
+</div>
+<% } %>
+</nav>
+
+<% } else if(row==3) { %>
+
+<nav class="columns">
+<% for(var i=0;i<3;i++) { %>
+<div class="column ">
+    <form action="/item<%= mer[i].sku %>">
+        <input type="hidden" name="sku" value="<%= mer[i].sku %>" >
+<input type="image" src="img/cd/png/<%= mer[i].sku %>.png">
+</form>
+
+</div>
+<% } %>
+</nav>
+
+<nav class="columns">
+<% for(var i=3;i<6;i++) { %>
+<div class="column ">
+    <form action="/item<%= mer[i].sku %>">
+        <input type="hidden" name="sku" value="<%= mer[i].sku %>" >
+<input type="image" src="img/cd/png/<%= mer[i].sku %>.png">
+</form>
+
+</div>
+<% } %>
+</nav>
+
+<% } else if(row==4) { %>
+
+<nav class="columns">
+<% for(var i=0;i<3;i++) { %>
+<div class="column ">
+    <form action="/item<%= mer[i].sku %>">
+        <input type="hidden" name="sku" value="<%= mer[i].sku %>" >
+<input type="image" src="img/cd/png/<%= mer[i].sku %>.png">
+</form>
+
+</div>
+<% } %>
+</nav>
+
+<nav class="columns">
+<% for(var i=3;i<6;i++) { %>
+<div class="column ">
+    <form action="/item<%= mer[i].sku %>">
+        <input type="hidden" name="sku" value="<%= mer[i].sku %>" >
+<input type="image" src="img/cd/png/<%= mer[i].sku %>.png">
+</form>
+
+</div>
+<% } %>
+</nav>
+
+<% } %>
+
+<% } else { %> no mer <% }  %>
+

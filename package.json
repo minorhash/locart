@@ -1,0 +1,31 @@
+{
+  "name": "locart",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "aidy": "^1.3.0",
+    "better-sqlite3": "^5.4.0",
+    "bulma": "^0.7.5",
+    "cardb": "^1.3.10",
+    "cookie-parser": "~1.4.3",
+    "cookie-session": "^1.3.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "i18n-express": "^1.1.3",
+    "morgan": "~1.9.0",
+    "mypal": "^1.2.2",
+    "nodemailer": "^6.1.1",
+    "paypal-rest-sdk": "^1.8.1",
+    "serve-favicon": "^2.5.0",
+    "snd-ema": "^1.0.5",
+    "superagent": "^5.0.5",
+    "supertest": "^4.0.2",
+    "supertest-session": "^4.0.0",
+    "usrdb": "^1.1.15"
+  }
+}

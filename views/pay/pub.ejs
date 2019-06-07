@@ -1,0 +1,24 @@
+<%= pub %><br>
+<%= usr.name %>
+<% if(sar){ %>
+<br>
+<% if(sum){ %>
+sum:<%= Math.round(sum*1.08+650) %><br> 
+<% } else { %>
+no sum
+<% } %>
+
+<% for (let i=0;i<sar.length;i++){ %>
+<%= sar[i].sku %><br>
+<%= sar[i].pri%><br>
+<% } %>
+<% } else { %>no sar<% } %>
+<br>
+<% if(adr){ %>
+<%= adr.email%><br>
+<%= adr.phn%><br>
+<%= adr.ln1%><br>
+<%= adr.city%><br>
+<%= adr.sta%><br>
+<%= adr.zip%><br>
+<% } else { %>no adr<% } %>

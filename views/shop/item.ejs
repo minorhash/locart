@@ -1,0 +1,28 @@
+<% if(mer) { %>
+<article class="media">
+<figure class="media-left">
+<p class="image is-100x100">
+<img src="img/cd/png/<%= sku %>.png">
+</p>
+</figure>
+<div class="media-content">
+<div class="content">
+    <strong><%=shop.tit %>:<%= mer.name %></strong><br>
+<%=shop.sku%>:<%= mer.sku%><br>
+<% include ./fav%>
+
+
+</div>
+<% include ./lev%>
+<form method="post" action="/cart">
+    <input type="hidden" name="name" value="<%= mer.name %>">
+    <input type="hidden" name="sku" value="<%= mer.sku %>">
+    <input type="hidden" name="pri" value="<%= mer.pri %>"><br>
+    <input type="number" name="uni" value="1"><br><br>
+    <button class="button" type="submit">submit</button>
+</form>
+
+  </div>
+  </article>
+
+<% } else {%> no sku <% } %>

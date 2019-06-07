@@ -1,0 +1,46 @@
+<p class="has-text-centered">
+<button class="button">
+history
+</button>
+</p><br>
+<% if(usr) { %>
+<div class="columns">
+
+<div class="column has-background-mis">
+<header class="has-text-centered">
+<button class="button is-danger">
+paidy
+</button>
+</header><br>
+
+<% if(pid) { %>
+<% for (var i=0;i<pid.length;i++){ %>
+<%= pid[i].pid %><br>
+
+<% } %>
+<%} else {%>
+no paidy order
+<% } %>
+</div>
+
+<div class="column has-background-ali">
+<header class="has-text-centered">
+<button class="button is-info">
+paypal
+</button>
+</header><br>
+
+<% if(pal) { %>
+<% for (var i=0;i<pal.length;i++){ %>
+<%= pal[i].id%><br>
+
+<% } %>
+<%} else {%>
+no pal order
+<% } %>
+
+</div>
+
+<%} else {%>
+<% include ./in%>
+<%} %>

@@ -1,0 +1,14 @@
+<section class="card">
+
+<div class="card-content">
+<p class="button is-ali">
+    <%=shop.sub%>:<%= sum.toLocaleString()%> &nbsp;<%=shop.yen%><br>
+</p>
+    <% var tax=Math.round(sum*.08) %>
+    <%=shop.tax%>:<%= tax%>&nbsp;<%=shop.yen%><br>
+    <%=shop.ship%>:650&nbsp;<%=shop.yen%><br><br>
+
+<p class="button is-info"><%=shop.sum%>:<%= (sum+tax+650).toLocaleString()%>&nbsp;<%=shop.yen%></p>
+</div>
+
+</section>

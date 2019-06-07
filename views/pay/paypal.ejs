@@ -1,0 +1,28 @@
+
+<p class="button is-info">paypal</p>
+
+<% if(sar) { %>
+
+<% for(var i=0;i<sar.length;i++) { %>
+<article class="media">
+
+<figure class="media-left">
+
+<p class="image is-100x100">
+<img src="img/cd/png/<%= sar[i].sku %>.png">
+</p>
+</figure>
+
+<div class="media-content">
+<div class="content">
+<strong><%=shop.tit %>:<%= sar[i].name %></strong> 
+<br>
+
+</div>
+
+
+ </div>
+  <div class="media-content"> 
+</article>
+<% } %><!-- for-->
+<% } else {%> <%=shop.noit %><% } %>

@@ -1,0 +1,37 @@
+<% if(usr) { %>
+<p class="has-text-centered">
+<button class="button">
+welcome <%= usr.name %>
+</button>
+</p><br>
+
+<form method="post" action="/usr-out">
+    <input type="hidden" name="out" value="yes">
+    <button class="button">log out</button>
+<%} else {%>
+<div class="columns">
+<div class="column">
+<h1>ログイン</h1>
+
+<form action="/usr-log" method="post">
+E-mail:<br><input class="input" id="ema" type="email" name="email"  size="15">
+
+<br>
+Password:<br><input class="input" id="pss" type="text" name="pss" value="" size="15">
+<br><br>
+<button type="submit" class="button is-info">ログイン</button>
+</form>
+
+<br>
+アカウントをお持ちでない方<br><br>
+
+<form action="/usr-sign" method="get">
+<button type="submit" class="button is-danger">サインイン</button>
+</form>
+</div>
+
+<div class="column">
+rite
+</div>
+</div>
+<%} %>

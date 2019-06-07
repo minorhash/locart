@@ -1,0 +1,23 @@
+<% if(usr) { %>
+welcome 
+<%= usr.name%>
+<%} else {%>
+<h1>ログイン</h1>
+
+<form action="/usr-log" method="post">
+E-mail:<br><input class="input" id="ema" type="email" name="email"  size="15">
+
+<br>
+Password:<br><input class="input" id="pss" type="text" name="pss" value="" size="15">
+<br><br>
+<button type="submit" class="button is-info">ログイン</button>
+</form>
+
+<br>
+アカウントをお持ちでない方<br><br>
+
+<form action="/usr-sign" method="get">
+<button type="submit" class="button is-danger">サインイン</button>
+</form>
+
+<%} %>

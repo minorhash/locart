@@ -1,0 +1,77 @@
+<% if(mer.length!==0) { %>
+<% row=Math.ceil(mer.length/3) %>
+<% if(row == 1) { %>
+<nav class="columns">
+<% for(var k=0;k<mer.length;k++ ) { %>
+<div class="column is-one-quarter has-text-centered has-background-ali" >
+
+<form action="/item<%= mer[k].sku %>">
+<input type="hidden" name="sku" value="<%= mer[k].sku %>" >
+<input type="image" src="img/cd/png/<%= mer[k].sku %>.png">
+</form>
+
+</div>
+<% } %><!-- for-->
+</nav>
+<% } else if(row==2 ) { %>
+
+<nav class="columns">
+<% for(var k=0;k<3;k++ ) { %>
+<div class="column">
+<form action="/item<%= mer[k].sku %>">
+<input type="hidden" name="sku" value="<%= mer[k].sku %>" >
+<input type="image" src="img/cd/png/<%= mer[k].sku %>.png">
+</form>
+</div>
+<% } %><!-- for-->
+</nav>
+<nav class="columns">
+<% for(var k=3;k<6;k++ ) { %>
+<div class="column">
+<form action="/item<%= mer[k].sku %>">
+<input type="hidden" name="sku" value="<%= mer[k].sku %>" >
+<input type="image" src="img/cd/png/<%= mer[k].sku %>.png">
+</form>
+
+</div>
+<% } %>
+</nav>
+
+<% } else if(row==3 ) { %>
+<nav class="columns">
+<% for(var k=0;k<3;k++ ) { %>
+<div class="column">
+<form action="/item<%= mer[k].sku %>">
+<input type="hidden" name="sku" value="<%= mer[k].sku %>" >
+<input type="image" src="img/cd/png/<%= mer[k].sku %>.png">
+</form>
+</div>
+<% } %><!-- for-->
+</nav>
+<nav class="columns">
+<% for(var k=3;k<6;k++ ) { %>
+<div class="column">
+<form action="/item<%= mer[k].sku %>">
+<input type="hidden" name="sku" value="<%= mer[k].sku %>" >
+<input type="image" src="img/cd/png/<%= mer[k].sku %>.png">
+</form>
+
+</div>
+<% } %>
+</nav>
+<nav class="columns">
+<% for(var k=6;k<mer.length;k++ ) { %>
+<div class="column">
+<form action="/item<%= mer[k].sku %>">
+<input type="hidden" name="sku" value="<%= mer[k].sku %>" >
+<input type="image" src="img/cd/png/<%= mer[k].sku %>.png">
+</form>
+
+</div>
+<% } %>
+</nav>
+
+
+<% } %>
+<% } else { %> <%=shop.noit %> <% }  %>
+

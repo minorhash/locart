@@ -1,0 +1,53 @@
+@import "../../node_modules/bulma/sass/utilities/initial-variables.sass";
+@import "../../node_modules/bulma/sass/utilities/functions.sass";
+$footer-background-color:black;
+$footer-padding:1rem 1rem 1rem 1rem;
+
+$ali:aliceblue;
+$ali-invert:findColorInvert($ali);
+$bei:beige;
+$bei-invert:findColorInvert($bei);
+$cad:cadetblue;
+$cad-invert:findColorInvert($cad);
+
+$cor:cornsilk;
+$cor-invert:findColorInvert($cor);
+$lg:lightgreen;
+$lg-invert:findColorInvert($lg);
+
+$mis:mistyrose;
+$mis-invert:findColorInvert($mis);
+$plu:plum;
+$plu-invert:findColorInvert($plu);
+
+$sal:salmon;
+$sal-invert:findColorInvert($sal);
+
+$tom:tomato;
+$tom-invert:findColorInvert($tom);
+
+$sizes: (0,10,15,20,25,30,50);
+@each $size in $sizes {
+  .m-#{$size} {
+    margin: $size + px;
+  }
+  .p-#{$size} {
+    padding: $size + px;
+  }
+}
+
+@import "../../node_modules/bulma/sass/utilities/derived-variables.sass";
+$addColors: (
+"ali": ($ali, $ali-invert),
+"bei": ($bei, $bei-invert),
+"cad": ($cad, $cad-invert),
+"cor": ($cor, $cor-invert),
+"lg": ($lg, $lg-invert),
+"mis": ($mis, $mis-invert),
+"plu": ($plu, $plu-invert),
+"sal": ($sal, $sal-invert),
+"tom": ($tom, $tom-invert)
+);
+
+$colors: map-merge($colors, $addColors);
+@import "../../node_modules/bulma/bulma.sass";

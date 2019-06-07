@@ -1,0 +1,24 @@
+<% if(allmer){ %>
+<%= allmer.length %>
+
+<% for(var i=0;i<allmer.length;i++) { %>
+<% if(allmer[i].cat=="dra") {  %>
+<%= allmer[i].sku %>
+
+<nav class="columns">
+<% for(var i=0;i<3;i++) { %>
+<div class="column ">
+    <form action="/cart-item<%= allmer[i].sku %>">
+        <input type="hidden" name="sku" value="<%= allmer[i].sku %>" >
+<input type="image" src="img/cd/png/<%= allmer[i].sku %>.png">
+</form>
+
+</div>
+<% } %>
+</nav>
+
+<% } else { %> no dra <% } %>
+<% } %>
+
+<% } else { %> no mer <% }  %>
+

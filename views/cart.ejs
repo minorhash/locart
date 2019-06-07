@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<% include par/head%>
+<% include par/nav%>
+
+<html>
+<body>
+<section class="section">
+<div class="columns">
+		<div class="column is-one-quarter has-background-ali">
+		<% include shop/cat%>
+		</div><!-- col1 4-->
+
+<% if(sar!==null){ %>
+<div class="column is-two-quarters has-background-info"> 
+
+<% include shop/cart %>
+<% include shop/clr%>
+
+</div><!-- col3 4-->
+
+<% if(sum!==0){ %>
+<div class="column is-one-quarter has-background-primary" style="">
+
+    <% include shop/sum %>
+    <% include shop/pay%>
+
+</div><!-- col3 4-->
+<% }  %>
+
+<% } else { %>&nbsp;
+
+<div class="column is-three-quarter has-background-tom ">
+    <p class="button is-info"><%=shop.noit %></p><br>
+sss
+</div>
+
+<% }  %>
+
+</div><!-- row--> 
+
+</section> 
+
+</body>
+</html>
+

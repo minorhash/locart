@@ -1,0 +1,26 @@
+<p class="button is-danger">paidy</p>
+<% if(sar) { %>
+
+<% for(var i=0;i<sar.length;i++) { %>
+<article class="media">
+
+<div class="media-content">
+<div class="content">
+<strong><%=shop.tit %>:<%= sar[i].name %></strong> 
+<br>
+
+</div>
+
+<% include ./lev %>
+
+ </div>
+  <div class="media-content"> 
+</article>
+<% } %><!-- for-->
+
+<% include ./aid %>
+
+
+<% } else {%> <%=shop.noit %><% } %>
+
+

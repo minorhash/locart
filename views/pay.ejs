@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<% include par/head%>
+<% include par/nav%>
+<body>
+
+<!-- menu -->
+
+<section class="section">
+<div class="columns">
+<div class="column is-one-quarter ">
+<% include shop/cat %>
+
+</div>
+
+<div class="column"> 
+<% if(usr){ %>
+<% include pay/sel%>
+<% } else { %>
+
+<% include usr/in%>
+<% } %>
+</div><!-- /col-->
+</div><!-- /cols-->
+
+</section><!-- sec-->
+
+</body>
+
+<div class="foot">
+<% include par/foot %>
+</div>
+</html>
+

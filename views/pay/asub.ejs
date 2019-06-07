@@ -1,0 +1,117 @@
+<article class="media">
+<div class="media-left is-paddingless">
+    <div class="box">
+<%=iusr.name%><%= usr.name%><%=iusr.sama%><br>
+<% if(sar){ %>
+<br>
+<% if(sum){ %>
+sum:
+<%= Math.round(sum) %><br> 
+tax:<%= Math.round(sum*.08) %><br> 
+tot:<%= Math.round(sum*1.08+650) %><br> 
+
+<% var tsum= Math.round(sum*1.08+650) %><br> 
+<% } else { %>no sum<% } %>
+
+<% for (let i=0;i<sar.length;i++){ %>
+<%=shop.tit%>:
+<%= sar[i].name%><br>
+<%=shop.sku%>:
+<%= sar[i].sku %><br>
+<%=shop.pri%>:
+<%= sar[i].pri%><br>
+<%=shop.unit%>:
+<%= sar[i].uni%><br>
+<% } %>
+<% } else { %>no sar<% } %>
+<br>
+<% if(adr){ %>
+<%=iusr.email %><%= adr.email%><br>
+<%= adr.phn%><br>
+<%= adr.ln1%><br>
+<%= adr.city%><br>
+<%= adr.sta%><br>
+<%= adr.zip%><br>
+<% } else { %>no adr<% } %>
+    </div>
+    </div>
+
+<div class="media-right has-background-ali">
+<p class="pa1">
+Paidy決済をご希望の方は下記ボタンを押してください。<br>
+Paidyのページが表示されますので、
+「お支払い手続きへ」をクリック後、<br>
+Paidyのアカウントにてログインし、お手続きください。</p><br>
+
+<button class="button is-danger" id="paidy-checkout-button" onclick="paidyPay()">Paidy決済</button>
+    </div>
+
+</article>
+
+<script type="text/javascript" src="https://apps.paidy.com/"></script>
+   <script type="text/javascript">
+
+var config={
+"api_key":"<%= pub %>",
+"logo_url":"http://www.paidy.com/images/logo.png",
+"closed":function(cb){
+
+var loc= "http://localhost:3000";
+
+var xhr = new XMLHttpRequest();
+xhr.open("PUT", loc+"/pid", true);
+xhr.setRequestHeader('Content-Type', 'application/json');
+xhr.send(JSON.stringify(cb));
+}
+};
+var paidyHandler=Paidy.configure(config);
+function paidyPay(){
+var payload={
+"amount":<%= tsum %>,
+"currency":"JPY",
+"store_name":"tmstore",
+"buyer":{
+"email":"<%= adr.email %>",
+"name1":"<%= usr.name %>",
+"phone":"<%= adr.phn %>"
+},
+"buyer_data":{
+"user_id":"yamada_taro",
+"age":29,
+"order_count":1000,
+"ltv":250000,
+"last_order_amount":20000,
+"last_order_at":20
+},
+"order":{
+
+"items":[
+<% for(var i=0;i<sar.length;i++){ %>
+{
+"id":"<%= sar[i].id %>",
+"quantity":"<%= sar[i].uni%>",
+"title":"<%= sar[i].name%>",
+"unit_price":"<%= sar[i].pri%>"
+       },
+    <% } %>
+],
+"order_ref":"88e021674",
+"shipping":650,
+"tax":<%= Math.round(sum*.08)%>
+},
+"shipping_address":{
+"line1":"<%= adr.ln1 %>",
+"line2":"<%= adr.ln2 %>",
+"city":"<%= adr.city %>",
+"state":"<%= adr.state%>",
+"zip":"<%= adr.zip%>"
+},
+"description":"tmstore"
+};
+paidyHandler.launch(payload);
+};
+
+
+</script>
+
+
